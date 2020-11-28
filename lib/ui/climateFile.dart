@@ -39,7 +39,7 @@ class _ClimateState extends State<Climate> {
         backgroundColor: Colors.red,
         actions: <Widget>[
           IconButton(
-              icon: new Icon(Icons.menu),
+              icon: Icon(Icons.menu),
               onPressed: () {
                 _goToNextScreen(context);
               })
@@ -129,45 +129,45 @@ class _ClimateState extends State<Climate> {
 }
 
 class ChangeCity extends StatelessWidget {
-  var _cityFieldController = new TextEditingController();
+  var _cityFieldController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
+    return Scaffold(
+      appBar: AppBar(
         backgroundColor: Colors.red,
-        title: new Text('Change City'),
+        title: Text('Change City'),
         centerTitle: true,
       ),
-      body: new Stack(
+      body: Stack(
         children: <Widget>[
-          new Center(
-            child: new Image.asset(
+          Center(
+            child: Image.asset(
               'images/white_snow.png',
               width: 590.0,
               height: 1200.0,
               fit: BoxFit.fill,
             ),
           ),
-          new ListView(
+          ListView(
             children: <Widget>[
-              new ListTile(
-                title: new TextField(
-                  decoration: new InputDecoration(
+              ListTile(
+                title: TextField(
+                  decoration: InputDecoration(
                     hintText: 'Enter City',
                   ),
                   controller: _cityFieldController,
                   keyboardType: TextInputType.text,
                 ),
               ),
-              new ListTile(
-                title: new FlatButton(
+              ListTile(
+                title: FlatButton(
                     onPressed: () {
                       Navigator.pop(
                           context, {'enter': _cityFieldController.text});
                     },
                     textColor: Colors.white70,
                     color: Colors.redAccent,
-                    child: new Text('Get Weather')),
+                    child: Text('Get Weather')),
               )
             ],
           )
@@ -194,6 +194,6 @@ TextStyle tempStyle() {
 }
 
 TextStyle extraData() {
-  return new TextStyle(
+  return TextStyle(
       color: Colors.white70, fontStyle: FontStyle.normal, fontSize: 17.0);
 }
